@@ -21,4 +21,9 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\ShopMeneger.Application\ShopMeneger.Application.csproj" />
+    <ProjectReference Include="..\..\Core\ShopMeneger.Domain\ShopMeneger.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
