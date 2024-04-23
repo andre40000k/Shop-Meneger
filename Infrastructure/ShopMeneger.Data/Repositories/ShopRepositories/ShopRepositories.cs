@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShopMeneger.Application.Interfaces;
 using ShopMeneger.Application.Interfaces.IRepositories;
-using ShopMeneger.Application.Queries.ShopQueries;
 using ShopMeneger.Domain.Entityes;
 
 namespace ShopMeneger.Data.Repositories.ShopRepositories
@@ -22,8 +21,15 @@ namespace ShopMeneger.Data.Repositories.ShopRepositories
 
         public async Task<Shop?> GetByIdAsync(Guid shopId, CancellationToken cancellationToken = default)
         {
-            return await _context.Shops.AsNoTracking()
+
+            Console.WriteLine();
+
+            var shop = await _context.Shops.AsNoTracking()
                 .FirstOrDefaultAsync(s => s.ShopId == shopId);
+
+            Console.WriteLine();
+
+            return shop; 
         }
     }
 }

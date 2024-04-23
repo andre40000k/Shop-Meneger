@@ -11,20 +11,24 @@ namespace ShopMeneger.Api.Controllers.v1
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateShopCommand createShopCommand)
         {
+            if (createShopCommand == null)
+                return BadRequest("Sorry"); 
+
             return Ok(await Mediator.Send(createShopCommand));
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetById(Guid shopId)
+        public async Task<IActionResult> GetById([FromBody] GetByIdShopQuery shopIdQuery)
         {
-            var receivedShop = await Mediator.Send(new GetByIdShopQuery { ShopId = shopId });
-
+            Console.WriteLine("Get {0}", shopIdQuery);
+            var receivedShop = await Mediator.Send(shopIdQuery);
+            Console.WriteLine("Get {0}", receivedShop);
             if (receivedShop != null) 
             { 
             return Ok(receivedShop);
             }
 
-            return BadRequest($"The shop by id {shopId}, has been not founded");
+            return BadRequest($"The shop by id {shopIdQuery.ShopId}, has been not founded");
         }
     }
 }

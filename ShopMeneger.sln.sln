@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopMeneger.Application", "Core\ShopMeneger.Application\ShopMeneger.Application.csproj", "{7C25E4AC-CB48-4095-A9FB-4B112C044482}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopMeneger.Application", "Core\ShopMeneger.Application\ShopMeneger.Application.csproj", "{7C25E4AC-CB48-4095-A9FB-4B112C044482}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{C405BB8E-2D04-4468-B165-CAB4A9C46858}"
 EndProject
@@ -11,13 +11,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pressentation", "Pressentation", "{F5E6FD24-3416-4F18-A3A5-BCE900A387F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopMeneger.Domain", "Core\ShopMeneger.Domain\ShopMeneger.Domain.csproj", "{CB833C37-895D-4CDF-A6E1-982C2046F45C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopMeneger.Domain", "Core\ShopMeneger.Domain\ShopMeneger.Domain.csproj", "{CB833C37-895D-4CDF-A6E1-982C2046F45C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopMeneger.Data", "Infrastructure\ShopMeneger.Data\ShopMeneger.Data.csproj", "{218D4024-1E3A-4D8F-A205-31E1562E948E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopMeneger.Data", "Infrastructure\ShopMeneger.Data\ShopMeneger.Data.csproj", "{218D4024-1E3A-4D8F-A205-31E1562E948E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopMeneger.DataAccess", "Infrastructure\ShopMeneger.DataAccess\ShopMeneger.DataAccess.csproj", "{CFA4B654-4721-4839-92F3-FFA5726874D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopMeneger.DataAccess", "Infrastructure\ShopMeneger.DataAccess\ShopMeneger.DataAccess.csproj", "{CFA4B654-4721-4839-92F3-FFA5726874D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopMeneger.Api", "Pressentation\ShopMeneger.Api\ShopMeneger.Api.csproj", "{3CB0D47D-DE1F-4CFB-AF44-742EFC1BE139}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopMeneger.Api", "Pressentation\ShopMeneger.Api\ShopMeneger.Api.csproj", "{3CB0D47D-DE1F-4CFB-AF44-742EFC1BE139}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{70FAD32D-EA7E-484E-9731-66D74ED57A45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xUnit", "xUnit", "{F460AA30-3922-4141-AE5E-C1B83AAB510C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopMeneger.Api.Tests", "Tests\xUnit\ShopMeneger.Api.Tests\ShopMeneger.Api.Tests.csproj", "{D2911D49-1179-47C9-B58D-DC53F8383753}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopMeneger.Data.Tests", "Tests\xUnit\ShopMeneger.Data.Tests\ShopMeneger.Data.Tests.csproj", "{B1256033-DA68-4BAF-9801-D046E3380ED2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopMeneger.DataAccess.Tests", "Tests\xUnit\ShopMeneger.DataAccess.Tests\ShopMeneger.DataAccess.Tests.csproj", "{DB3C35CF-F8B3-4A37-840E-3965A1A6E058}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +55,18 @@ Global
 		{3CB0D47D-DE1F-4CFB-AF44-742EFC1BE139}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CB0D47D-DE1F-4CFB-AF44-742EFC1BE139}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CB0D47D-DE1F-4CFB-AF44-742EFC1BE139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2911D49-1179-47C9-B58D-DC53F8383753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2911D49-1179-47C9-B58D-DC53F8383753}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2911D49-1179-47C9-B58D-DC53F8383753}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2911D49-1179-47C9-B58D-DC53F8383753}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1256033-DA68-4BAF-9801-D046E3380ED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1256033-DA68-4BAF-9801-D046E3380ED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1256033-DA68-4BAF-9801-D046E3380ED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1256033-DA68-4BAF-9801-D046E3380ED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB3C35CF-F8B3-4A37-840E-3965A1A6E058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB3C35CF-F8B3-4A37-840E-3965A1A6E058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB3C35CF-F8B3-4A37-840E-3965A1A6E058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB3C35CF-F8B3-4A37-840E-3965A1A6E058}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,5 +77,12 @@ Global
 		{218D4024-1E3A-4D8F-A205-31E1562E948E} = {8BD0C64F-7BA0-49B1-BD6D-147AF51C2983}
 		{CFA4B654-4721-4839-92F3-FFA5726874D3} = {8BD0C64F-7BA0-49B1-BD6D-147AF51C2983}
 		{3CB0D47D-DE1F-4CFB-AF44-742EFC1BE139} = {F5E6FD24-3416-4F18-A3A5-BCE900A387F6}
+		{F460AA30-3922-4141-AE5E-C1B83AAB510C} = {70FAD32D-EA7E-484E-9731-66D74ED57A45}
+		{D2911D49-1179-47C9-B58D-DC53F8383753} = {F460AA30-3922-4141-AE5E-C1B83AAB510C}
+		{B1256033-DA68-4BAF-9801-D046E3380ED2} = {F460AA30-3922-4141-AE5E-C1B83AAB510C}
+		{DB3C35CF-F8B3-4A37-840E-3965A1A6E058} = {F460AA30-3922-4141-AE5E-C1B83AAB510C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CBC6CE2B-4AA4-4BBB-8B30-8470A8B6CE92}
 	EndGlobalSection
 EndGlobal

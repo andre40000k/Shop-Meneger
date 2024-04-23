@@ -14,9 +14,18 @@ namespace ShopMeneger.DataAccess.QueriesHandler.ShopQueriesHandler
             _repository = repository;
         }
 
-        public async Task<Shop> Handle(GetByIdShopQuery request, CancellationToken cancellationToken)
+        public async Task<Shop?> Handle(GetByIdShopQuery request, CancellationToken cancellationToken)
         {
-            return await _repository.GetByIdAsync(request.ShopId);
+            Console.WriteLine("Get {0}", request);
+            var currentShop = await _repository.GetByIdAsync(request.ShopId, cancellationToken);
+            Console.WriteLine("Get {0}", currentShop);
+
+            if (currentShop == null)
+            {
+                return null;
+            }
+
+            return currentShop;
         }
     }
 }
