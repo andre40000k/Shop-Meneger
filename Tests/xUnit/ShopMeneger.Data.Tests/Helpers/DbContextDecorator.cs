@@ -1,11 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ShopMeneger.Application.Interfaces;
-using ShopMeneger.Data.Context;
 using ShopMeneger.Domain.Entityes;
 
 namespace ShopMeneger.Data.Tests.Helpers
 {
-    public class DbContextDecorator<T> where T : ShopMenegerContext
+    public class DbContextDecorator<T> where T : DbContext
     {
         private readonly DbContextOptions<T> _options;
 
@@ -22,15 +20,15 @@ namespace ShopMeneger.Data.Tests.Helpers
         public void AddAndSaveShop<TEntity>(TEntity entity, CancellationToken token) where TEntity : Shop
             => Using(CreateDbContextInstance(), async context =>
             {
-                context.Shops.Add(entity);
+                context.Add(entity);
                 await context.SaveChangesAsync(token);
             });
 
         public void AddRangeAndSaveShop<TEntity>(TEntity entity, CancellationToken token) where TEntity : class
-            => Using(CreateDbContextInstance(), async context =>
+            => Using(CreateDbContextInstance(), context =>
             {
-                context.Shops.AddRange((IEnumerable<Shop>)entity);
-                await context.SaveChangesAsync(token);
+                context.AddRange((IEnumerable<Shop>)entity);
+                context.SaveChangesAsync(token);
             });
 
         public void Assert(Action<T> assert)

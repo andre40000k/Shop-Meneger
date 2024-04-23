@@ -7,7 +7,7 @@ namespace ShopMeneger.Data.Tests.Helpers
     public static class DbContextHelper
     {
 
-        public static DbContextOptions<TContext> CreateInMemoryDbOption<TContext>() where TContext : ShopMenegerContext
+        public static DbContextOptions<TContext> CreateInMemoryDbOption<TContext>() where TContext : DbContext
         {
             return new DbContextOptionsBuilder<TContext>()
                 .UseInMemoryDatabase("Temporary_Db")

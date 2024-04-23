@@ -1,9 +1,6 @@
 ﻿using AutoFixture;
-using Moq;
-using ShopMeneger.Application.Commands.ShopCommands;
 using ShopMeneger.Application.Interfaces.IRepositories;
 using ShopMeneger.Application.Queries.ShopQueries;
-using ShopMeneger.DataAccess.CommandsHandler.ShopCommandsHandler;
 using ShopMeneger.DataAccess.QueriesHandler.ShopQueriesHandler;
 using ShopMeneger.Domain.Entityes;
 

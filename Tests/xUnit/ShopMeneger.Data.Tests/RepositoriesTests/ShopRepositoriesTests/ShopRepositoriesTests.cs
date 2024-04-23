@@ -24,29 +24,6 @@ namespace ShopMeneger.Data.Tests.RepositoriesTests.ShopRepositoriesTests
         }
 
         [Fact]
-        public void AddShopAsync_Save_New_Shop()
-        {
-            // Arrange
-            var fixture = new Fixture();
-
-            var addShop = fixture.Build<Shop>()
-                .With(x => x.ShopName, "Jast_Shop")
-                .Without(x => x.ShopCategorys)
-                .Create();
-
-            // Act
-            _context.AddAndSaveShop(addShop, _cts.Token);
-
-            _context.Assert(async context =>
-            {
-                var sut = CreateSut(context);
-
-                await sut.AddShopAsync(addShop, _cts.Token);
-            });
-            // Assert
-        }
-
-        [Fact]
         public void GetShopByIdAsync_Get_Correct_Shop() 
         {
             // Arrange
@@ -66,28 +43,17 @@ namespace ShopMeneger.Data.Tests.RepositoriesTests.ShopRepositoriesTests
 
             _context.AddRangeAndSaveShop(new List<Shop> { expectedShop1, expectedShop2 }, default);
 
-            _context.Assert( async context =>
+            _context.Assert( context =>
             {
                 var sut = CreateSut(context);
 
                 // Act
-                var resultShop1 = await sut.GetByIdAsync(Guid.Parse("DAA2A192-9135-4511-997B-669F18F56660"), default);
-                var resultShop2 = await sut.GetByIdAsync(Guid.Parse("B49CD59B-69BF-4AF0-9D25-2775CA1B6820"), default);
+                
+                var resultShop1 = sut.GetByIdAsync(Guid.Parse("DAA2A192-9135-4511-997B-669F18F56660"), default).Result;
 
                 //Assert
 
-                bool result3 = resultShop1.ShopId == expectedShop1.ShopId;
-
-                var expectedId = expectedShop1.ShopId;
-                var resultId = resultShop1.ShopId;
-
-                bool test = expectedId==resultId;
-
-                Assert.True(expectedId != resultId);
-                //AssertMovieResult(expectedShop1, result1);
-                //Assert.True(result == null);
-                //Assert.NotNull(result);
-                //Assert.Equal(expectedShop1, result1);
+                AssertMovieResult(expectedShop1, resultShop1);
             });
         }
 
@@ -95,11 +61,11 @@ namespace ShopMeneger.Data.Tests.RepositoriesTests.ShopRepositoriesTests
         {
             Assert.Multiple(() =>
             {
-                Assert.Null(result);
+                Assert.NotNull(result);
+                Assert.True(expected.ShopId == result.ShopId);
             });
         }
 
         private static ShopRepositories CreateSut(ShopMenegerContext context) => new ShopRepositories(context);
-        //private static ShopRepositories CreateSut(ShopMenegerContext context) => new ShopRepositories(context);
     }
 }

@@ -1,5 +1,4 @@
-﻿using Moq;
-using AutoFixture;
+﻿using AutoFixture;
 using ShopMeneger.Application.Interfaces.IRepositories;
 using ShopMeneger.DataAccess.CommandsHandler.ShopCommandsHandler;
 using ShopMeneger.Application.Commands.ShopCommands;
