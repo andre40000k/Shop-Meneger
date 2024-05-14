@@ -39,7 +39,7 @@ namespace ShopMeneger.Api.Tests.V1Tests
 
             // Act
 
-            var createRespons = _controller.Create(null).Result as ObjectResult;
+            var createRespons = _controller.CreateShop(null).Result as ObjectResult;
             var item = createRespons.Value;
 
             // Assert
@@ -60,7 +60,7 @@ namespace ShopMeneger.Api.Tests.V1Tests
 
             // Act
 
-            var createRespons = _controller.Create(newShop).Result as ObjectResult;
+            var createRespons = _controller.CreateShop(newShop).Result as ObjectResult;
             var item = createRespons.Value;
 
             // Assert
@@ -89,7 +89,7 @@ namespace ShopMeneger.Api.Tests.V1Tests
 
             // Act
 
-            var createRespons = await _controller.GetById(shopId) as ObjectResult;
+            var createRespons = await _controller.GetByIdShop(shopId) as ObjectResult;
             var result = createRespons.Value as Shop;
 
             // Assert
@@ -114,7 +114,7 @@ namespace ShopMeneger.Api.Tests.V1Tests
 
             // Act
 
-            var createRespons = await _controller.GetById(shopId) as ObjectResult;
+            var createRespons = await _controller.GetByIdShop(shopId) as ObjectResult;
             var result = createRespons.Value.ToString().ToLower();
 
 

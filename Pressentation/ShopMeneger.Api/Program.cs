@@ -8,15 +8,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Configuration.AddUserSecrets<ShopMenegerContext>().Build();
+//builder.Configuration.AddUserSecrets<ShopMenegerContext>().Build();
 
-builder.Services.AddDbContext<ShopMenegerContext>(options =>
-{
-    var conectionString = builder.Configuration
-    .GetConnectionString("EfCoreShopMenegerDataBase");
+//builder.Services.AddDbContext<ShopMenegerContext>(options =>
+//{
+//    var conectionString = builder.Configuration
+//    .GetConnectionString("EfCoreShopMenegerDataBase");
 
-    options.UseSqlServer(conectionString);
-});
+//    options.UseSqlServer(conectionString);
+//});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
